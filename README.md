@@ -1,9 +1,9 @@
-# Sign Language Detection System
+# ✋ Sign Language Detection System
 
-## Team Members
+## 👩‍💻 Team Members
 
 | Name | Roll No |
-|------|---------|
+|------|----------|
 | Kodali Naga Sreeja | 2410030076 |
 | Bijju Adithi Yadav | 2410030228 |
 | Likitha Thumma | 2410030229 |
@@ -12,51 +12,49 @@
 
 ---
 
-## 📌 Overview
+## 📘 Overview
 
-The **Sign Language Detection System** is a real-time application that interprets hand gestures into corresponding letters or words. It uses a webcam for live detection and employs machine learning models to recognize American Sign Language (ASL) gestures accurately. The system is designed to assist communication for people with hearing impairments.
+The **Sign Language Detection System** is a machine learning-based application that detects and recognizes hand gestures from sign language.  
+It uses **MediaPipe** for detecting hand landmarks and a **Random Forest Classifier** model trained on extracted features to predict the corresponding alphabet or word.  
+
+The system includes a simple **Flask-based web interface** that allows users to upload sign videos and get instant predictions.
 
 ---
 
 ## 🎯 Purpose
 
-- Facilitate communication for individuals with hearing or speech difficulties.  
-- Demonstrate concepts of **computer vision, machine learning, and GUI integration**.  
-- Provide an **interactive learning tool** for ASL.  
+- To assist communication for people with hearing or speech impairments.  
+- To demonstrate practical applications of **computer vision** and **machine learning**.  
+- To provide a basic foundation for real-time sign language recognition systems.  
 
 ---
 
 ## ⚙️ How It Works
 
-1. User opens the application → webcam activates.  
-2. Hand gestures are detected in real-time.  
-3. The machine learning model classifies the gesture → displays the corresponding letter or word on the GUI.  
-4. Users can also record sequences to form sentences.  
+1. The user uploads a **sign language video** through the web interface.  
+2. The system extracts **hand landmarks** using MediaPipe.  
+3. The trained **machine learning model** analyzes the landmarks.  
+4. The predicted letter or word is displayed on the webpage.  
+
+---
+
+## 🧠 Technologies Used
+
+- **Python**  
+- **Flask** – web framework  
+- **MediaPipe** – hand tracking and landmark detection  
+- **OpenCV** – video frame processing  
+- **Scikit-learn** – model training (Random Forest Classifier)  
+- **Pandas, NumPy** – data handling  
+- **HTML, CSS** – front-end design  
 
 ---
 
 ## ✅ Key Features
 
-- Real-time hand gesture detection.  
-- User-friendly **GUI interface** with live webcam feed.  
-- Supports **alphabet and basic word recognition** in ASL.  
-- Lightweight and runs offline (no internet needed).  
-- Visual feedback shows **detected gesture and predicted output**.  
+- Upload and predict sign gesture from video.  
+- Uses **hand landmarks** for recognition (no special sensors).  
+- Option to **train model** from collected gesture data.  
+- Simple and lightweight Flask web interface.  
+- Works completely **offline** after model is trained.  
 
----
-
-## ⚠️ Limitations
-
-- Works best under good lighting conditions.  
-- Only supports **ASL alphabets and limited words**.  
-- Detection may vary with **hand orientation, background, or camera quality**.  
-- Requires a **compatible webcam** for live detection.  
-
----
-
-## 🚀 Future Scope
-
-- Extend to **full ASL vocabulary** including sentences and phrases.  
-- Implement **mobile app integration**.  
-- Add **voice output** for detected gestures.  
-- Improve **accuracy with advanced deep learning models** and multiple camera angles.  
