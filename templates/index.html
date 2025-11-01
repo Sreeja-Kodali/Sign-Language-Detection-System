@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Language Detection System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #1f1c2c, #928dab);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      color: white;
+      width: 420px;
+      box-shadow: 0 4px 40px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 1.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-weight: 600;
+      font-size: 1.8em;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    h2 {
+      font-weight: 400;
+      font-size: 1em;
+      color: #f0f0f0;
+      margin-bottom: 25px;
+    }
+
+    .upload-box {
+      background: rgba(255, 255, 255, 0.08);
+      border: 2px dashed #ffffff90;
+      border-radius: 15px;
+      padding: 25px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .upload-box:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: #fff;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+
+    label {
+      background-color: #00c6ff;
+      padding: 12px 25px;
+      border-radius: 8px;
+      cursor: pointer;
+      color: white;
+      font-weight: 500;
+      transition: 0.3s;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    label:hover {
+      background-color: #7caae3;
+    }
+
+    button {
+      margin-top: 25px;
+      background: #ff416c;
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      font-size: 15px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #ff4b2b;
+    }
+
+    .result {
+      margin-top: 30px;
+      background: rgba(255, 255, 255, 0.1);
+      border-left: 5px solid #00c6ff;
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 1.1em;
+      animation: fadeIn 0.5s ease;
+    }
+
+    footer {
+      margin-top: 25px;
+      font-size: 0.85em;
+      color: #ddd;
+      opacity: 0.8;
+    }
+
+    .highlight {
+      color: #00c6ff;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>🤟 Sign Language Detection</h1>
+    <h2>Upload a sign language video to predict the gesture</h2>
+
+    <form action="/predict" method="post" enctype="multipart/form-data">
+      <div class="upload-box">
+        <label for="fileUpload">Upload a file </label>
+        <input type="file" id="fileUpload" name="video" accept="video/mp4" required>
+        <p id="fileName" style="margin-top:10px; opacity:0.8;">No file selected</p>
+      </div>
+
+      <button type="submit">🔍 Predict Sign</button>
+    </form>
+
+    {% if predicted_sign %}
+      <div class="result">
+        <strong></strong> <span class="highlight">{{ predicted_sign }}</span>
+      </div>
+    {% endif %}
+
+  </div>
+
+  <script>
+    const fileInput = document.getElementById('fileUpload');
+    const fileName = document.getElementById('fileName');
+    fileInput.addEventListener('change', () => {
+      fileName.textContent = fileInput.files.length > 0 ? fileInput.files[0].name : 'No file selected';
+    });
+  </script>
+</body>
+</html>
