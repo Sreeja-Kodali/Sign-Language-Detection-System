@@ -1,6 +1,6 @@
 Flask
 opencv-python
-mediapipe
+mediapipe-solutions
 numpy
 pandas
 scikit-learn

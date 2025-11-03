@@ -3,7 +3,8 @@ import os
 import cv2
 import pickle
 import numpy as np
-import mediapipe as mp
+import mediapipe_solutions as mp
+
 
 app = Flask(__name__)
 
