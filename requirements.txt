@@ -1,8 +1,7 @@
-flask
+Flask
+opencv-python
+mediapipe
+numpy
 pandas
 scikit-learn
-mediapipe
-opencv-python
-numpy
-tqdm
 gunicorn
