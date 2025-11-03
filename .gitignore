@@ -2,18 +2,22 @@
 __pycache__/
 *.pyc
 
-# Temporary uploads
+# Temporary files
 uploads/
 
-# Large model file
+# Large files
 model/sign_model.pkl
+data/*.csv
 
-# Large dataset files
+# Dataset videos and large JSONs
 dataset/videos/
-dataset/*.json
-dataset/*.txt
+dataset/*.mp4
+dataset/*.avi
+dataset/*.mov
+dataset/*.zip
+dataset/*.tar
 
 # Environment / IDE
-.env
 .vscode/
 .idea/
+.env
