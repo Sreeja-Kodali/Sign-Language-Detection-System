@@ -1,7 +1,7 @@
 import os
 import json
 import cv2
-import mediapipe_solutions as mp
+import mediapipe as mp
 import pandas as pd
 from tqdm import tqdm
 
