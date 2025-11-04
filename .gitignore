@@ -1,33 +1,42 @@
-# Ignore Python cache and temporary files
+# Ignore Python cache and virtual environment folders
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
-*.db
-*.sqlite3
-*.log
-
-# Ignore environment files
-.env
+env/
 venv/
 .venv/
 
-# Ignore dataset and uploads (large/unnecessary files)
-data/
-uploads/
+# Ignore model files (large)
+model/*.pkl
+model/*.joblib
+
+# Ignore dataset files (if you have huge ones)
+data/*.csv
+data/*.zip
 dataset/
+uploads/
 
-# Ignore model folder except compressed model file
-model/
-
-# Ignore system files
+# Ignore system and editor files
 .DS_Store
 Thumbs.db
-
-# Ignore VS Code settings
 .vscode/
+.idea/
 
-# Ignore build artifacts
-*.egg-info/
+# Ignore temporary files
+*.log
+*.tmp
+*.bak
+
+# Ignore build / cache folders
 dist/
 build/
+.cache/
+.pytest_cache/
+
+# Ignore local configs
+*.env
+config.json
+
+# If you’re using Jupyter notebooks
+.ipynb_checkpoints/

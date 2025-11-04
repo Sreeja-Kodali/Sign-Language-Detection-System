@@ -16,6 +16,7 @@ from sklearn.metrics import accuracy_score
 app = Flask(__name__)
 
 MODEL_PATH = 'model/sign_model.pkl'
+MODEL_PATH_GZ = 'model/sign_model.pkl.gz'
 DATA_PATH = 'data/gesture_data.csv'
 
 @app.route('/')
