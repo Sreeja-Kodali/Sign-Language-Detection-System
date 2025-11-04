@@ -9,6 +9,7 @@ venv/
 
 # Ignore model files (large)
 model/*.pkl
+!model/*.pkl.gz
 model/*.joblib
 
 # Ignore dataset files (if you have huge ones)
