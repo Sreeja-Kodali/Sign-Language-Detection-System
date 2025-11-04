@@ -18,8 +18,7 @@ uploads/
 dataset/
 
 # Ignore model folder except compressed model file
-model/*
-!model/sign_model.pkl.gz
+model/
 
 # Ignore system files
 .DS_Store
