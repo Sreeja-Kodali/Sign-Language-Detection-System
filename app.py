@@ -12,6 +12,7 @@ except Exception as e:
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
+import gzip
 
 app = Flask(__name__)
 
@@ -58,11 +59,16 @@ def predict():
     video_path = os.path.join('uploads', file.filename)
     file.save(video_path)
 
-    if not os.path.exists(MODEL_PATH):
+    # Load model (check both .gz and .pkl)
+    model = None
+    if os.path.exists(MODEL_PATH_GZ):
+        with gzip.open(MODEL_PATH_GZ, 'rb') as f:
+            model = pickle.load(f)
+    elif os.path.exists(MODEL_PATH):
+        with open(MODEL_PATH, 'rb') as f:
+            model = pickle.load(f)
+    else:
         return render_template('index.html', predicted_sign="⚠️ Train model first!")
-
-    with open(MODEL_PATH, 'rb') as f:
-        model = pickle.load(f)
 
     # Check mediapipe availability
     if not mp_available:
