@@ -6,7 +6,7 @@ __pycache__/
 uploads/
 
 # Large files
-#model/sign_model.pkl
+sign_model.pkl
 data/*.csv
 
 # Dataset videos and large JSONs
