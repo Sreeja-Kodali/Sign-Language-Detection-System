@@ -1,23 +1,34 @@
-# Python cache
+# Ignore Python cache and temporary files
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+*.log
 
-# Temporary files
-uploads/
-
-# Large files
-sign_model.pkl
-data/*.csv
-
-# Dataset videos and large JSONs
-dataset/videos/
-dataset/*.mp4
-dataset/*.avi
-dataset/*.mov
-dataset/*.zip
-dataset/*.tar
-
-# Environment / IDE
-.vscode/
-.idea/
+# Ignore environment files
 .env
+venv/
+.venv/
+
+# Ignore dataset and uploads (large/unnecessary files)
+data/
+uploads/
+dataset/
+
+# Ignore model folder except compressed model file
+model/*
+!model/sign_model.pkl.gz
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore VS Code settings
+.vscode/
+
+# Ignore build artifacts
+*.egg-info/
+dist/
+build/
