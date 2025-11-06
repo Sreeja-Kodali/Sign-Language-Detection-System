@@ -10,7 +10,6 @@ venv/
 # Ignore model files (large)
 model/*.pkl
 !model/*.pkl.gz
-model/*.joblib
 
 # Ignore dataset files (if you have huge ones)
 data/*.csv
@@ -24,11 +23,6 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Ignore temporary files
-*.log
-*.tmp
-*.bak
-
 # Ignore build / cache folders
 dist/
 build/
@@ -39,5 +33,3 @@ build/
 *.env
 config.json
 
-# If you’re using Jupyter notebooks
-.ipynb_checkpoints/
